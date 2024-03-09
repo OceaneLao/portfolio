@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.forEach((card) => {
             let pictureCard = new Image();
             pictureCard.src = card.picture;
+            pictureCard.style.maxWidth = "60%";
+            pictureCard.style.maxHeight = "50%";
             
             let titleCard = document.createElement('h3');
             titleCard.textContent = card.title;

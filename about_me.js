@@ -14,7 +14,7 @@ let pictureAbout = document.createElement('img');
 pictureAbout.src = 'assets/img/Round_design.png';
 document.getElementsByClassName('container')[2].appendChild(pictureAbout);
 document.getElementsByClassName('container')[2].appendChild(pictureAbout).style.maxWidth = "40%";
-document.getElementsByClassName('container')[2].appendChild(pictureAbout).maxHeight = "40%";
+document.getElementsByClassName('container')[2].appendChild(pictureAbout).style.maxHeight = "40%";
 
 // Text about
 let textAbout = document.createElement('p');
