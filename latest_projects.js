@@ -4,10 +4,15 @@ titleH2.textContent = "Mes derniers projets";
 document.body.appendChild(titleH2).style.color = "#fff";
 titleH2.style.textAlign = "center";
 
-// Card div container
+// Latest projects div container
+let latestProjectsContainer = document.createElement('div');
+latestProjectsContainer.classList.add('container');
+document.body.appendChild(latestProjectsContainer);
+
+// Card content div container  
 let cardContainer = document.createElement('div');
-cardContainer.classList.add('cardContainer');
-document.body.appendChild(cardContainer);
+cardContainer.classList.add('card');
+document.getElementsByClassName('container')[1].appendChild(cardContainer);
 
 // Fetch JSON file
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
        return res.json();
     })
     .then((cards) => {
-        let cardDisplay = document.getElementsByClassName('cardContainer')[0];
+        //Display card
+        let cardDisplay = document.getElementsByClassName('card')[0];
 
         //Select JSON file element
         cards.forEach((card) => {
@@ -25,15 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
             
             let titleCard = document.createElement('h3');
             titleCard.textContent = card.title;
-            titleCard.style.color = "#fff";
+            titleCard.style.color = "#000";
 
             let dateCard = document.createElement('p');
             dateCard.textContent = card.date;
-            dateCard.style.color = "#fff";
+            dateCard.style.color = "#000";
 
             let descriptionCard = document.createElement('p');
             descriptionCard.textContent = card.description;
-            descriptionCard.style.color = "#fff";
+            descriptionCard.style.color = "#000";
             
             //Display JSON file elements
             cardDisplay.appendChild(pictureCard);
@@ -46,3 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Unable to fetch data:", error)
     );
 });
+
+// Button See more
+let buttonSeeMore = document.createElement('button');
+buttonSeeMore.textContent = "Découvrir";
+document.getElementsByClassName('container')[1].appendChild(buttonSeeMore);
