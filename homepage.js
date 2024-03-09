@@ -2,7 +2,6 @@
 let homepageContainer = document.createElement('div');
 // Add class name for homepage container
 homepageContainer.classList.add('container');
-console.log(homepageContainer.classList.toString());
 // Display homepage block picture
 document.body.appendChild(homepageContainer).style.height = "650px";
 document.body.appendChild(homepageContainer).style.backgroundImage = "url('assets/img/Horizontal_block_V2.png')";
