@@ -1,8 +1,8 @@
 // Display h2 title
-let titleH2 = document.createElement('h2');
-titleH2.textContent = "Mes derniers projets";
-document.body.appendChild(titleH2).style.color = "#fff";
-titleH2.style.textAlign = "center";
+let titleLatestProjects = document.createElement('h2');
+titleLatestProjects.textContent = "Mes derniers projets";
+document.body.appendChild(titleLatestProjects).style.color = "#fff";
+titleLatestProjects.style.textAlign = "center";
 
 // Latest projects div container
 let latestProjectsContainer = document.createElement('div');
