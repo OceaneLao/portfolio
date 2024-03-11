@@ -2,14 +2,16 @@
 let aboutContainer = document.createElement("div");
 aboutContainer.setAttribute(
   "class",
-  "aboutContainer container w-75 d-flex flex-column justify-content-center align-items-center ps-5 pe-5"
+  "aboutContainer container w-75 d-flex d-flex flex-lg-row flex-sm-column justify-content-center align-items-center ps-5 pe-5"
 );
 document.body.appendChild(aboutContainer).style.marginTop = "200px";
 document.body.appendChild(aboutContainer).style.marginBottom = "200px";
 
 // Display container picture, text and button
 let aboutDisplay = document.createElement("div");
-aboutDisplay.setAttribute("class", "aboutDisplay d-flex");
+aboutDisplay.setAttribute(
+  "class", 
+  "aboutDisplay");
 document.getElementsByClassName("aboutContainer")[0].appendChild(aboutDisplay);
 
 // Display picture

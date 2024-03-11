@@ -60,7 +60,7 @@ document.getElementsByClassName("container")[3].appendChild(contactText);
 let contactForm = document.createElement("form");
 contactForm.setAttribute("method", "post");
 contactForm.setAttribute("action", "submit");
-contactForm.setAttribute("class", "contactForm w-75");
+contactForm.setAttribute("class", "contactForm w-lg-75 w-sm-100");
 document.getElementsByClassName("container")[3].appendChild(contactForm);
 
 let inputName = document.createElement("input");

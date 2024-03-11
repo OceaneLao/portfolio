@@ -11,7 +11,7 @@ document.body.appendChild(titleLatestProjects);
 let latestProjectsContainer = document.createElement("div");
 latestProjectsContainer.setAttribute(
     "class",
-    "latestProjectsContainer container w-75 d-flex flex-wrap justify-content-center align-items-center"
+    "latestProjectsContainer container w-lg-75 w-sm-100 d-flex flex-wrap justify-content-center align-items-center"
     );
 document.body.appendChild(latestProjectsContainer);
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let cardDisplay = document.createElement("div");
         cardDisplay.setAttribute(
             "class", 
-            "cardDisplay flex-column col-6 text-light"
+            "cardDisplay flex-column col-6 text-light text-left"
             );
         document
           .getElementsByClassName("container")[1]
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let pictureCard = new Image();
         pictureCard.src = card.picture;
-        pictureCard.style.maxWidth = "80%";
+        pictureCard.style.maxWidth = "100%";
         pictureCard.style.maxHeight = "50%";
 
         let titleCard = document.createElement("h3");
@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let descriptionCard = document.createElement("p");
         descriptionCard.textContent = card.description;
-        descriptionCard.style.marginRight = "50px";
 
         //Display JSON file elements
         cardDisplay.appendChild(pictureCard);

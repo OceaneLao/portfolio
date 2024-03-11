@@ -1,27 +1,35 @@
-// Display an background image in div
-let homepageContainer = document.createElement("div");
-// Add class name for homepage container
-homepageContainer.setAttribute(
-  "class",
-  "container d-flex flex-column justify-content-center"
-);
-// Display homepage block picture
-document.body.appendChild(homepageContainer).style.marginTop = "50px";
-document.body.appendChild(homepageContainer).style.height = "645px";
-document.body.appendChild(homepageContainer).style.backgroundImage =
-  "url('assets/img/Vertical_block.png')";
-document.body.appendChild(homepageContainer).style.backgroundRepeat =
-  "no-repeat";
-document.body.appendChild(homepageContainer).style.backgroundSize = "contain";
-document.body.appendChild(homepageContainer).style.backgroundPosition =
-  "center";
+// Function to set the homepage background image according to the width of the screen
+function setHomepageBackgroundImage() {
+  let isMobile = window.innerWidth <= 767;
 
-// Display homepage content
+  let homepageContainer = document.createElement("div");
+  homepageContainer.setAttribute(
+    "class",
+    "container d-flex flex-column justify-content-center"
+  );
+
+  let homepageBackgroundImage = "url('assets/img/Vertical_block.png')";
+  document.body.appendChild(homepageContainer).style.backgroundImage =
+    homepageBackgroundImage;
+    document.body.appendChild(homepageContainer).style.backgroundPosition =
+    "center"; 
+    document.body.appendChild(homepageContainer).style.backgroundRepeat =
+    "no-repeat";
+  document.body.appendChild(homepageContainer).style.marginTop = "50px";
+  document.body.appendChild(homepageContainer).style.height = "645px";
+  document.body.appendChild(homepageContainer).style.backgroundSize = "contain";
+
+  // Display homepage content
 let homepageContent = document.createElement("div");
 homepageContent.setAttribute("class", "homepage-content");
 document
   .getElementsByClassName("container")[0]
   .appendChild(homepageContent).style.marginLeft = "100px";
+}
+
+setHomepageBackgroundImage();
+
+window.addEventListener("resize", setHomepageBackgroundImage);
 
 // Display H1 tilte on homepage container
 let newTitle = document.createElement("h1");
