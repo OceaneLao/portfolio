@@ -11,20 +11,24 @@ function setHomepageBackgroundImage() {
   let homepageBackgroundImage = "url('assets/img/Vertical_block.png')";
   document.body.appendChild(homepageContainer).style.backgroundImage =
     homepageBackgroundImage;
+  if (isMobile) {
+  } else {
     document.body.appendChild(homepageContainer).style.backgroundPosition =
-    "center"; 
+      "center";
     document.body.appendChild(homepageContainer).style.backgroundRepeat =
-    "no-repeat";
-  document.body.appendChild(homepageContainer).style.marginTop = "50px";
-  document.body.appendChild(homepageContainer).style.height = "645px";
-  document.body.appendChild(homepageContainer).style.backgroundSize = "contain";
+      "no-repeat";
+    document.body.appendChild(homepageContainer).style.marginTop = "50px";
+    document.body.appendChild(homepageContainer).style.height = "645px";
+    document.body.appendChild(homepageContainer).style.backgroundSize =
+      "contain";
+  }
 
   // Display homepage content
-let homepageContent = document.createElement("div");
-homepageContent.setAttribute("class", "homepage-content");
-document
-  .getElementsByClassName("container")[0]
-  .appendChild(homepageContent).style.marginLeft = "100px";
+  let homepageContent = document.createElement("div");
+  homepageContent.setAttribute("class", "homepage-content");
+  document
+    .getElementsByClassName("container")[0]
+    .appendChild(homepageContent).style.marginLeft = "100px";
 }
 
 setHomepageBackgroundImage();
