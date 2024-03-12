@@ -1,20 +1,19 @@
 // Créer une fonction pour afficher tout le contenu de Homepage
+let homepageContainer = document.createElement("div");
+homepageContainer.setAttribute(
+  "class",
+  "homepage-container container d-flex flex-column justify-content-center"
+);
+// Afficher la div et définir des propriétés de l'image en arrière plan pour la version Desktop
+document.body.appendChild(homepageContainer).style.backgroundImage =
+  "url('assets/img/Vertical_block.png')";
+homepageContainer.style.backgroundPosition = "center";
+homepageContainer.style.backgroundRepeat = "no-repeat";
+homepageContainer.style.marginTop = "50px";
+homepageContainer.style.height = "645px";
+homepageContainer.style.backgroundSize = "contain";
+
 function homepageContent() {
-  let homepageContainer = document.createElement("div");
-  homepageContainer.setAttribute(
-    "class",
-    "homepage-container container d-flex flex-column justify-content-center"
-  );
-
-  // Afficher la div et définir des propriétés de l'image en arrière plan pour la version Desktop
-  document.body.appendChild(homepageContainer).style.backgroundImage =
-    "url('assets/img/Vertical_block.png')";
-  homepageContainer.style.backgroundPosition = "center";
-  homepageContainer.style.backgroundRepeat = "no-repeat";
-  homepageContainer.style.marginTop = "50px";
-  homepageContainer.style.height = "645px";
-  homepageContainer.style.backgroundSize = "contain";
-
   //Récupérer l'élément parent pour le rendre vide : cela empêchera de répéter le même bloc lors du redimensionnement
   let displayHomepage =
     document.getElementsByClassName("homepage-container")[0];
@@ -30,7 +29,8 @@ function homepageContent() {
   homepageTitle.textContent = "The best moment is yet to come - BTS";
   homepageTitle.setAttribute(
     "class",
-    "homepage-title col-6 text-light align-items-start mb-5");
+    "homepage-title col-6 text-light align-items-start mb-5"
+  );
   homepageTitleButton.appendChild(homepageTitle);
 
   // Créer et afficher le bouton "Découvrir"

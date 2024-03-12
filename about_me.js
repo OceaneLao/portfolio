@@ -2,7 +2,7 @@
 let aboutContainer = document.createElement("div");
 aboutContainer.setAttribute(
   "class",
-  "about-container container w-75 d-flex flex-lg-row flex-sm-column justify-content-center align-items-center ps-5 pe-5"
+  "about-container container w-lg-75 w-sm-100 d-flex flex-lg-row flex-sm-column justify-content-center align-items-center ps-lg-5 pe-lg-5"
 );
 document.body.appendChild(aboutContainer).style.marginTop = "200px";
 document.body.appendChild(aboutContainer).style.marginBottom = "200px";
