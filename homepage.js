@@ -20,16 +20,6 @@ function homepageContent() {
     document.getElementsByClassName("homepage-container")[0];
   displayHomepage.innerHTML = "";
 
-  // Déclarer une variable en version Mobile first et ajouter une condition
-  let isMobileHomepage = window.innerWidth <= 767;
-  if (isMobileHomepage) {
-    //Propriétés de l'image en arrière-plan en mobile first
-    homepageContainer.style.backgroundImage =
-      "url('assets/img/Vertical_block_mobile_first.png')";
-      homepageContainer.style.marginTop = "100px";
-    homepageContainer.style.height = "600px";
-  }
-
   // Créer et afficher le titre et le bouton contenus dans une balise div
   let homepageTitleButton = document.createElement("div");
   homepageTitleButton.setAttribute("class", "homepage-title-button");
@@ -40,8 +30,7 @@ function homepageContent() {
   homepageTitle.textContent = "The best moment is yet to come - BTS";
   homepageTitle.setAttribute(
     "class",
-    "homepage-title col-5 text-light align-items-start mb-5"
-  );
+    "homepage-title col-6 text-light align-items-start mb-5");
   homepageTitleButton.appendChild(homepageTitle);
 
   // Créer et afficher le bouton "Découvrir"
@@ -57,6 +46,19 @@ function homepageContent() {
   buttonDiscover.style.padding = "15px 50px";
   buttonDiscover.style.borderRadius = "50px";
   buttonDiscover.style.boxShadow = "5px 5px 15px #9F23C1";
+
+  // Déclarer une variable en version Mobile first et ajouter une condition
+  let isMobileHomepage = window.innerWidth <= 767;
+  if (isMobileHomepage) {
+    //Propriétés de l'image en arrière-plan en mobile first
+    homepageContainer.style.backgroundImage =
+      "url('assets/img/Vertical_block_mobile_first.png')";
+    homepageContainer.style.marginTop = "70px";
+    homepageContainer.style.height = "600px";
+
+    //Margin de l'affichage du titre + bouton
+    displayHomepage.appendChild(homepageTitleButton).style.marginLeft = "50px";
+  }
 }
 
 // Appeler la fonction
