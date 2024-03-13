@@ -1,6 +1,7 @@
 // Créer et afficher le titre H2
 let titleContact = document.createElement("h2");
 titleContact.textContent = "Contactez-moi";
+titleContact.setAttribute("id", "contact");
 titleContact.setAttribute("class", "text-center text-light mt-5 mb-1");
 document.body.appendChild(titleContact);
 

@@ -1,6 +1,7 @@
 // Afficher le titre H2
 let titleLatestProjects = document.createElement("h2");
 titleLatestProjects.textContent = "Mes derniers projets";
+titleLatestProjects.setAttribute("id","latest-projects");
 titleLatestProjects.setAttribute("class", "text-center text-light mt-5 mb-5");
 document.body.appendChild(titleLatestProjects);
 

@@ -1,11 +1,15 @@
 // Créer une balise div contenant le bloc A propos
 let aboutContainer = document.createElement("div");
 aboutContainer.setAttribute(
+  "id",
+  "about"
+);
+aboutContainer.setAttribute(
   "class",
   "about-container container w-lg-75 w-sm-100 d-flex flex-lg-row flex-sm-column justify-content-center align-items-center ps-lg-5 pe-lg-5"
 );
-document.body.appendChild(aboutContainer).style.marginTop = "200px";
-aboutContainer.style.marginBottom = "200px";
+document.body.appendChild(aboutContainer).style.paddingTop = "200px";
+aboutContainer.style.paddingBottom = "200px";
 
 // Afficher le contenu A propos
 let aboutDisplay = document.createElement("div");

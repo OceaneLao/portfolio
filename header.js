@@ -10,20 +10,20 @@ function displayHeader() {
   // HEADER LIST NAVBAR with title and URL (link)
   let menu = [
     {
-      title: "Accueil",
-      url: "/accueil",
+      title: "Homepage",
+      url: "#",
     },
     {
       title: "Mes derniers projets",
-      url: "/latest-projects",
+      url: "#latest-projects",
     },
     {
       title: "A propos de moi",
-      url: "/about",
+      url: "#about",
     },
     {
       title: "Contact",
-      url: "/contact",
+      url: "#contact",
     },
   ];
 
