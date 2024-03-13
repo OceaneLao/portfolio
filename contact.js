@@ -13,6 +13,7 @@ contactContainer.setAttribute(
 );
 document.body.appendChild(contactContainer);
 
+function openNewTab() { 
 // Créer une balise div contenant le bloc des icônes
 let iconsDiv = document.createElement("div");
 iconsDiv.setAttribute("class", "iconsDiv mt-3 mb-3");
@@ -21,15 +22,15 @@ document.getElementsByClassName("contact-container")[0].appendChild(iconsDiv);
 // Créer un Array avec img src (path) et a href (url)
 let icons = [
   {
-    url: "#",
+    url: "https://github.com/OceaneLao",
     path: "assets/img/mdi_github.png",
   },
   {
-    url: "#",
+    url: "https://www.linkedin.com/in/laooceane/",
     path: "assets/img/mdi_linkedin.png",
   },
   {
-    url: "#",
+    url: "https://www.behance.net/laooceane",
     path: "assets/img/devicon-plain_behance.png",
   },
 ];
@@ -43,14 +44,20 @@ icons.forEach((icon) => {
   displayIcons.style.maxWidth = "15%";
   displayIcons.style.maxHeight = "15%";
   displayIcons.setAttribute("class", "ms-3 me-3");
-
+ 
   // Créer les liens a href
   let linksIcons = document.createElement("a");
   linksIcons.href = icon.url;
-
   linksIcons.appendChild(displayIcons);
   iconsDisplay.appendChild(linksIcons);
-});
+
+  linksIcons.addEventListener("click", function(event) {
+      event.preventDefault(); // Empêcher le lien de s'ouvrir normalement
+      window.open(icon.url, "_blank"); // Ouvrir le lien dans un nouvel onglet
+    });
+  })
+};
+openNewTab();
 
 // Créer et afficher le paragraphe Info Contact
 let contactText = document.createElement("p");

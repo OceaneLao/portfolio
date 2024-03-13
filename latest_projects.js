@@ -1,17 +1,21 @@
-// Afficher le titre H2
-let titleLatestProjects = document.createElement("h2");
-titleLatestProjects.textContent = "Mes derniers projets";
-titleLatestProjects.setAttribute("id","latest-projects");
-titleLatestProjects.setAttribute("class", "text-center text-light mt-5 mb-5");
-document.body.appendChild(titleLatestProjects);
-
 // Créer une balise contenant le bloc Mes Derniers Projets
 let latestProjectsContainer = document.createElement("div");
+latestProjectsContainer.setAttribute("id", "latest-projects");
 latestProjectsContainer.setAttribute(
   "class",
   "latestProjectsContainer container w-lg-75 w-sm-100 d-flex flex-wrap justify-content-center align-items-center"
 );
 document.body.appendChild(latestProjectsContainer);
+
+// Créer une div contenant le titre H2 et l'afficher
+let displayTitleLatestProjects = document.createElement("div");
+displayTitleLatestProjects.setAttribute("class", "title-h2 col-12 pt-3");
+document.getElementById("latest-projects").appendChild(displayTitleLatestProjects);
+
+let titleLatestProjects = document.createElement("h2");
+titleLatestProjects.textContent = "Mes derniers projets";
+titleLatestProjects.setAttribute("class", "text-center text-light mt-5 mb-5");
+document.getElementsByClassName("title-h2")[0].appendChild(titleLatestProjects);
 
 // Fetch JSON file
 document.addEventListener("DOMContentLoaded", function () {

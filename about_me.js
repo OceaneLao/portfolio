@@ -60,7 +60,7 @@ function aboutContent() {
   // Créer et afficher le bouton "Contactez-moi"
   let buttonContactMe = document.createElement("a");
   buttonContactMe.setAttribute("class", "text-decoration-none");
-  buttonContactMe.href = "#";
+  buttonContactMe.href = "#contact";
   buttonContactMe.textContent = "Contactez-moi";
   document
     .getElementsByClassName("titleTextButton")[0]

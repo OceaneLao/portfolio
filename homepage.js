@@ -1,4 +1,4 @@
-// Créer une balise div contenant le bloc Homepage 
+// Créer une balise div contenant le bloc Homepage
 let homepageContainer = document.createElement("div");
 homepageContainer.setAttribute(
   "class",
@@ -40,13 +40,13 @@ function homepageContent() {
     "class",
     "col-2 text-decoration-none text-center align-items-center"
   );
-  buttonDiscover.href = "#";
+  buttonDiscover.href = "#latest-projects";
   buttonDiscover.textContent = "Découvrir";
   homepageTitleButton.appendChild(buttonDiscover).style.color = "#010028";
   buttonDiscover.style.backgroundColor = "#fff";
   buttonDiscover.style.padding = "15px 50px";
   buttonDiscover.style.borderRadius = "50px";
-  buttonDiscover.style.boxShadow = "5px 5px 15px #9F23C1";
+  buttonDiscover.style.boxShadow = "5px 5px 15px #A024C2";
 
   // Déclarer une variable en version Mobile first et ajouter une condition
   let isMobileHomepage = window.innerWidth <= 767;
@@ -56,7 +56,7 @@ function homepageContent() {
       "url('assets/img/Vertical_block_mobile_first.png')";
     homepageContainer.style.marginTop = "70px";
     homepageContainer.style.height = "600px";
-    
+
     // Margin de l'affichage du titre + bouton
     homepageTitleButton.style.marginLeft = "50px";
     homepageTitleButton.style.marginRight = "50px";
