@@ -1,4 +1,4 @@
-// Créer une fonction pour afficher tout le contenu de Homepage
+// Créer une balise div contenant le bloc Homepage 
 let homepageContainer = document.createElement("div");
 homepageContainer.setAttribute(
   "class",
@@ -13,6 +13,7 @@ homepageContainer.style.marginTop = "50px";
 homepageContainer.style.height = "645px";
 homepageContainer.style.backgroundSize = "contain";
 
+// Créer une fonction pour afficher tout le contenu de Homepage
 function homepageContent() {
   //Récupérer l'élément parent pour le rendre vide : cela empêchera de répéter le même bloc lors du redimensionnement
   let displayHomepage =
@@ -29,7 +30,7 @@ function homepageContent() {
   homepageTitle.textContent = "The best moment is yet to come - BTS";
   homepageTitle.setAttribute(
     "class",
-    "homepage-title col-6 text-light align-items-start mb-5"
+    "homepage-title col-lg-6 col-sm-12 text-light align-items-sm-center align-items-lg-start mb-5"
   );
   homepageTitleButton.appendChild(homepageTitle);
 
@@ -55,9 +56,11 @@ function homepageContent() {
       "url('assets/img/Vertical_block_mobile_first.png')";
     homepageContainer.style.marginTop = "70px";
     homepageContainer.style.height = "600px";
-
-    //Margin de l'affichage du titre + bouton
-    displayHomepage.appendChild(homepageTitleButton).style.marginLeft = "50px";
+    
+    // Margin de l'affichage du titre + bouton
+    homepageTitleButton.style.marginLeft = "50px";
+    homepageTitleButton.style.marginRight = "50px";
+    homepageTitleButton.style.textAlign = "center";
   }
 }
 

@@ -1,18 +1,18 @@
-// Création d'un container pour le bloc About
+// Créer une balise div contenant le bloc A propos
 let aboutContainer = document.createElement("div");
 aboutContainer.setAttribute(
   "class",
   "about-container container w-lg-75 w-sm-100 d-flex flex-lg-row flex-sm-column justify-content-center align-items-center ps-lg-5 pe-lg-5"
 );
 document.body.appendChild(aboutContainer).style.marginTop = "200px";
-document.body.appendChild(aboutContainer).style.marginBottom = "200px";
+aboutContainer.style.marginBottom = "200px";
 
-// Display container picture, text and button
+// Afficher le contenu A propos
 let aboutDisplay = document.createElement("div");
 aboutDisplay.setAttribute("class", "aboutDisplay d-lg-flex");
 document.getElementsByClassName("about-container")[0].appendChild(aboutDisplay);
 
-// Créer une fonction pour afficher tout le contenu About (image, titre, texte et bouton)
+// Créer une fonction pour afficher tout le contenu A propos (image, titre, paragraphe et bouton)
 function aboutContent() {
   // Récupérer l'élément parent pour pouvoir le modifier
   let displayPicture = document.getElementsByClassName("aboutDisplay")[0];
@@ -40,20 +40,20 @@ function aboutContent() {
     .getElementsByClassName("aboutDisplay")[0]
     .appendChild(titleTextButton);
 
-  // Titre H2
+  // Créer et afficher le titre H2
   let titleAbout = document.createElement("h2");
   titleAbout.textContent = "A propos de moi";
   titleAbout.setAttribute("class", "text-center text-light mt-1");
   document.getElementsByClassName("titleTextButton")[0].appendChild(titleAbout);
 
-  // Texte à propos
+  // Créer et afficher le paragraphe
   let textAbout = document.createElement("p");
   textAbout.setAttribute("class", "text-about text-center text-light");
   textAbout.textContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   document.getElementsByClassName("titleTextButton")[0].appendChild(textAbout);
 
-  // Ajouter le bouton "Contactez-moi"
+  // Créer et afficher le bouton "Contactez-moi"
   let buttonContactMe = document.createElement("a");
   buttonContactMe.setAttribute("class", "text-decoration-none");
   buttonContactMe.href = "#";
@@ -75,7 +75,7 @@ function aboutContent() {
     pictureAbout.style.maxHeight = "100%";
     pictureAbout.style.marginRight = "0px";
     //Propriétés du bouton en mobile first
-    buttonContactMe.style.padding = "15px 20px";
+    buttonContactMe.style.padding = "15px 35px";
   }
 }
 // Appeler la fonction
