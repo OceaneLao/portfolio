@@ -16,7 +16,7 @@ let titleLatestProjects = document.createElement("h2");
 titleLatestProjects.textContent = "Mes derniers projets";
 titleLatestProjects.setAttribute("class", "text-center text-light mt-5 mb-5");
 document.getElementsByClassName("title-h2")[0].appendChild(titleLatestProjects);
-
+ 
 // Fetch JSON file
 document.addEventListener("DOMContentLoaded", function () {
   fetch("projects.json")
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then((cards) => {
       // Sélectionner les données dans le fichier JSON
-      cards.forEach((card) => {
+      cards.slice(-2).forEach((card) => {
         // Affichage des cards
         let cardDisplay = document.createElement("div");
         cardDisplay.setAttribute(
@@ -70,7 +70,7 @@ document.body.appendChild(displayButtonSeeMore);
 
 let buttonSeeMore = document.createElement("a");
 buttonSeeMore.setAttribute("class", "text-decoration-none mt-3");
-buttonSeeMore.href = "#";
+
 buttonSeeMore.textContent = "En voir plus";
 document
   .getElementsByClassName("buttonSeeMore")[0]
@@ -80,3 +80,7 @@ buttonSeeMore.style.padding = "15px 50px";
 buttonSeeMore.style.borderRadius = "50px";
 buttonSeeMore.style.boxShadow = "5px 5px 15px #9F23C1";
 buttonSeeMore.style.position = "center";
+
+buttonSeeMore.addEventListener('click', function() {
+  buttonSeeMore.href = cards.push(2).forEach((card));
+} );

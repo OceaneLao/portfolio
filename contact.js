@@ -13,6 +13,7 @@ contactContainer.setAttribute(
 );
 document.body.appendChild(contactContainer);
 
+// Créer une fonction permettant d'ouvrir un nouvel onglet lorsqu'on clique sur une icône
 function openNewTab() { 
 // Créer une balise div contenant le bloc des icônes
 let iconsDiv = document.createElement("div");
@@ -51,6 +52,7 @@ icons.forEach((icon) => {
   linksIcons.appendChild(displayIcons);
   iconsDisplay.appendChild(linksIcons);
 
+  // Ajouter un gestionnaire d'évènement lorsqu'une icône est cliquée dessus vers un nouvel onglet
   linksIcons.addEventListener("click", function(event) {
       event.preventDefault(); // Empêcher le lien de s'ouvrir normalement
       window.open(icon.url, "_blank"); // Ouvrir le lien dans un nouvel onglet
@@ -65,31 +67,34 @@ contactText.textContent =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 document.getElementsByClassName("container")[3].appendChild(contactText);
 
-// Créer et afficher le formulaire de contact
+// Créer le formulaire de contact
 let contactForm = document.createElement("form");
 contactForm.setAttribute("method", "post");
 contactForm.setAttribute("action", "submit");
 contactForm.setAttribute("class", "contactForm w-lg-75 w-sm-100");
 document.getElementsByClassName("container")[3].appendChild(contactForm);
 
+// Créer le champs de saisie pour le nom et prénom
 let inputName = document.createElement("input");
 inputName.setAttribute("type", "text");
 inputName.setAttribute("name", "FullName");
 inputName.setAttribute("class", "w-100 rounded mb-3 ps-3 pt-2 pb-2");
 inputName.setAttribute("placeholder", "Enter your name");
 
+// Créer le champs de saisie pour l'email
 let inputEmail = document.createElement("input");
 inputEmail.setAttribute("type", "email");
 inputEmail.setAttribute("name", "email");
 inputEmail.setAttribute("class", "w-100 rounded mb-3 ps-3 pt-2 pb-2");
 inputEmail.setAttribute("placeholder", "Enter your email");
 
+// Créer le champs de saisie pour le message
 let textArea = document.createElement("textarea");
 textArea.setAttribute("name", "message");
 textArea.setAttribute("class", "w-100 rounded mb-3 ps-3 pt-2");
 textArea.setAttribute("placeholder", "Enter your message");
 
-// Créer et afficher le bouton "Envoyer"
+// Créer le bouton "Envoyer"
 let buttonSubmit = document.createElement("button");
 buttonSubmit.setAttribute("class", "text-decoration-none text-center");
 buttonSubmit.href = "#";
@@ -102,6 +107,7 @@ buttonSubmit.style.padding = "15px 50px";
 buttonSubmit.style.borderRadius = "50px";
 buttonSubmit.style.boxShadow = "5px 5px 15px #9F23C1";
 
+// Afficher les différents composants du formulaire de contact
 contactForm.appendChild(inputName);
 contactForm.appendChild(inputEmail);
 contactForm.appendChild(textArea).style.height = "150px";
