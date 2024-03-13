@@ -9,50 +9,48 @@ document.body.appendChild(titleContact);
 let contactContainer = document.createElement("div");
 contactContainer.setAttribute(
   "class",
-  "container d-flex flex-column justify-content-center align-items-center text-center text-light"
+  "contact-container container d-flex flex-column justify-content-center align-items-center text-center text-light"
 );
 document.body.appendChild(contactContainer);
 
 // Créer une balise div contenant le bloc des icônes
 let iconsDiv = document.createElement("div");
 iconsDiv.setAttribute("class", "iconsDiv mt-3 mb-3");
-document.getElementsByClassName("container")[3].appendChild(iconsDiv);
+document.getElementsByClassName("contact-container")[0].appendChild(iconsDiv);
 
-// Créer une balise image contenant l'icône Github
-let iconGithub = document.createElement("img");
-iconGithub.src = "assets/img/mdi_github.png";
-document.getElementsByClassName("iconsDiv")[0].appendChild(iconGithub);
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconGithub).style.maxWidth = "15%";
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconGithub).style.maxHeight = "15%";
-iconGithub.setAttribute("class", "ms-3 me-3");
+// Créer un Array avec img src (path) et a href (url)
+let icons = [
+  {
+    url: "#",
+    path: "assets/img/mdi_github.png",
+  },
+  {
+    url: "#",
+    path: "assets/img/mdi_linkedin.png",
+  },
+  {
+    url: "#",
+    path: "assets/img/devicon-plain_behance.png",
+  },
+];
+// Sélectionner le div iconsDiv
+let iconsDisplay = document.getElementsByClassName("iconsDiv")[0];
+// Utiliser la méthode forEach pour parcourir le tableau
+icons.forEach((icon) => {
+  // Créer les images des icônes
+  let displayIcons = document.createElement("img");
+  displayIcons.src = icon.path;
+  displayIcons.style.maxWidth = "15%";
+  displayIcons.style.maxHeight = "15%";
+  displayIcons.setAttribute("class", "ms-3 me-3");
 
-// Créer une balise image contenant l'icône LinkedIn
-let iconLinkedIn = document.createElement("img");
-iconLinkedIn.src = "assets/img/mdi_linkedin.png";
-document.getElementsByClassName("iconsDiv")[0].appendChild(iconLinkedIn);
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconLinkedIn).style.maxWidth = "15%";
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconLinkedIn).style.maxHeight = "15%";
-iconLinkedIn.setAttribute("class", "ms-3 me-3");
+  // Créer les liens a href
+  let linksIcons = document.createElement("a");
+  linksIcons.href = icon.url;
 
-// Créer une balise image contenant l'icône Behance
-let iconBehance = document.createElement("img");
-iconBehance.src = "assets/img/devicon-plain_behance.png";
-document.getElementsByClassName("iconsDiv")[0].appendChild(iconBehance);
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconBehance).style.maxWidth = "15%";
-document
-  .getElementsByClassName("iconsDiv")[0]
-  .appendChild(iconBehance).style.maxHeight = "15%";
-iconBehance.setAttribute("class", "ms-3 me-3");
+  linksIcons.appendChild(displayIcons);
+  iconsDisplay.appendChild(linksIcons);
+});
 
 // Créer et afficher le paragraphe Info Contact
 let contactText = document.createElement("p");
