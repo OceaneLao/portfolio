@@ -2,7 +2,7 @@
 let titleLatestProjects = document.createElement("h2");
 titleLatestProjects.textContent = "Mes derniers projets";
 titleLatestProjects.setAttribute("id","latest-projects");
-titleLatestProjects.setAttribute("class", "text-center text-light mt-5 mb-5");
+titleLatestProjects.setAttribute("class", "text-center text-light pt-5 pb-5");
 document.body.appendChild(titleLatestProjects);
 
 // Créer une balise contenant le bloc Mes Derniers Projets
