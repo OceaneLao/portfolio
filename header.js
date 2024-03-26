@@ -56,8 +56,36 @@ function displayHeader() {
       iconMenu.setAttribute("aria-hidden", "true");
       headerIconBurgerDisplay.appendChild(iconMenu);
 
+      //Menu navbar
+      let displayMenuMobileFirst = null;
+      //Créer une condition lorsque l'icône est cliqué
       iconMenu.addEventListener("click", function () {
-        // alert("test");
+        if (!displayMenuMobileFirst) {
+          displayMenuMobileFirst = document.createElement("div");
+          displayMenuMobileFirst.setAttribute(
+            "class",
+            "display-menu-mobile-first container d-flex justify-content-center align-items-center"
+          );
+          displayMenuMobileFirst.style.position = "fixed";
+          displayMenuMobileFirst.style.height = "700px";
+          displayMenuMobileFirst.style.width = "100%";
+          displayMenuMobileFirst.style.top = "0px";
+          displayMenuMobileFirst.style.backgroundImage =
+            "url('assets/img/Background_V1.png')";
+          displayMenuMobileFirst.style.backgroundSize = "contain";
+          displayMenuMobileFirst.style.backgroundRepeat = "no-repeat";
+          displayMenuMobileFirst.style.backgroundPosition = "center";
+          document.body.appendChild(displayMenuMobileFirst);
+
+          let menuMobileFirst = document.createElement('p');
+          menuMobileFirst.textContent = "Menu";
+          menuMobileFirst.style.color = "white";
+          displayMenuMobileFirst.appendChild(menuMobileFirst);
+          
+        } else {
+          displayMenuMobileFirst.remove();
+          displayMenuMobileFirst = null;
+        }
       });
     }
   }
