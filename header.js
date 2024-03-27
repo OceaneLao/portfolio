@@ -56,9 +56,9 @@ function displayHeader() {
       iconMenu.setAttribute("aria-hidden", "true");
       headerIconBurgerDisplay.appendChild(iconMenu);
 
-      //Menu navbar
+      //Menu navbar en version Mobile First
       let displayMenuMobileFirst = null;
-      //Créer une condition lorsque l'icône est cliqué
+      //Créer une condition lorsque l'icône Menu Burger est cliqué
       iconMenu.addEventListener("click", function () {
         if (!displayMenuMobileFirst) {
           displayMenuMobileFirst = document.createElement("div");
@@ -67,21 +67,42 @@ function displayHeader() {
             "display-menu-mobile-first container d-flex justify-content-center align-items-center"
           );
           displayMenuMobileFirst.style.position = "fixed";
-          displayMenuMobileFirst.style.height = "700px";
-          displayMenuMobileFirst.style.width = "100%";
           displayMenuMobileFirst.style.top = "0px";
           displayMenuMobileFirst.style.backgroundImage =
             "url('assets/img/Background_V1.png')";
-          displayMenuMobileFirst.style.backgroundSize = "contain";
+          displayMenuMobileFirst.style.backgroundSize = "cover";
+          displayMenuMobileFirst.style.height = "700px";
+          displayMenuMobileFirst.style.width = "100%";
           displayMenuMobileFirst.style.backgroundRepeat = "no-repeat";
           displayMenuMobileFirst.style.backgroundPosition = "center";
           document.body.appendChild(displayMenuMobileFirst);
 
-          let menuMobileFirst = document.createElement('p');
-          menuMobileFirst.textContent = "Menu";
-          menuMobileFirst.style.color = "white";
-          displayMenuMobileFirst.appendChild(menuMobileFirst);
-          
+          //Afficher les onglets en version mobile first
+          let ulMenuMobileFirst = document.createElement("ul");
+          ulMenuMobileFirst.setAttribute("class", "p-0 m-0 text-center");
+
+          for (let i = 0; i < menu.length; i++) {
+            let liMenuMobileFirst = document.createElement("li");
+            liMenuMobileFirst.setAttribute("class", "mt-1 mb-1");
+
+            // Create a link
+            let link = document.createElement("a");
+            link.href = menu[i].url;
+            link.textContent = menu[i].title;
+
+            displayMenuMobileFirst.appendChild(ulMenuMobileFirst);
+            ulMenuMobileFirst.appendChild(liMenuMobileFirst);
+            liMenuMobileFirst.appendChild(link);
+
+            liMenuMobileFirst.style.listStyleType = "none";
+            link.setAttribute("class", "text-light text-decoration-none");
+
+            //Créer un gestionnaire d'évènement lorsqu'un onglet est cliqué, celui-ci amène à une ancre et l'affichage s'enlève 
+            link.addEventListener("click", function(){
+              displayMenuMobileFirst.remove();
+            });
+          }
+
         } else {
           displayMenuMobileFirst.remove();
           displayMenuMobileFirst = null;
